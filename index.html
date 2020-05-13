@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="./stringPrototype.js"></script>
+	</head>
+	<body>
+		<div id="result"></div>
+		<script type="text/javascript">
+			var data = [
+				{
+					template: "Merhaba {{ name }}",
+					object: { name: "Yunus" },
+				},
+				{
+					template: 'Google için url: <a href="{{ url }}>{{ title }}</a>',
+					object: { url: "google.com", title: "Google" },
+				},
+				{
+					template: "Toplam: {{ cost + profit }}",
+					object: { cost: 2, profit: 5 },
+				},
+				{
+					template: "İsim: {{ firstName }}, Soyisim: {{ lastName }}",
+					object: { firstName: "Yunus", lastName: "Korkmaz" },
+				},
+				{
+					template: "Toplam: {{ a }} + {{ b }}",
+					object: { a: 2, b: 3 },
+				},
+				{
+					template: "Toplam: {{ a }} + {{ b }} = {{ sum(a, b) }}",
+					object: { a: 4, b: 2, sum: (a, b) => a + b },
+				},
+				{
+					template:
+						"Çarpım: {{ num1 }} * {{ num2 }} = {{ carpim(num1, num2) }}",
+					object: { num1: 7, num2: 7, carpim: (num1, num2) => num1 * num2 },
+				},
+			];
+
+			data.map((item) => {
+				var element = document.createElement("p");
+				element.innerHTML = `${
+					item.template
+				} </br>  Result : ${item.template.inject(item.object)}`;
+				document.getElementById("result").appendChild(element);
+			});
+		</script>
+	</body>
+</html>

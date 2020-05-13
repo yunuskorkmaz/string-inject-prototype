@@ -1,0 +1,22 @@
+{
+	"name": "string-inject-prototype",
+	"version": "1.0.0",
+	"description": "",
+	"main": "stringPrototype.js",
+	"scripts": {
+		"deploy": "gh-pages -d ."
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yunuskorkmaz/string-inject-prototype.git"
+	},
+	"author": "Yunus Korkmaz",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/yunuskorkmaz/string-inject-prototype/issues"
+	},
+	"homepage": "https://github.com/yunuskorkmaz/string-inject-prototype#readme",
+	"devDependencies": {
+		"gh-pages": "^2.2.0"
+	}
+}
