@@ -15,10 +15,6 @@
 					object: { name: "Yunus" },
 				},
 				{
-					template: 'Google için url: <a href="{{ url }}>{{ title }}</a>',
-					object: { url: "google.com", title: "Google" },
-				},
-				{
 					template: "Toplam: {{ cost + profit }}",
 					object: { cost: 2, profit: 5 },
 				},
@@ -43,9 +39,10 @@
 
 			data.map((item) => {
 				var element = document.createElement("p");
-				element.innerHTML = `${
-					item.template
-				} </br>  Result : ${item.template.inject(item.object)}`;
+				element.innerHTML = `<pre>"${item.template}".inject(${JSON.stringify(
+					item.object
+				)}</pre> 
+				<div style="color:#bbb">Result : ${item.template.inject(item.object)}</div>`;
 				document.getElementById("result").appendChild(element);
 			});
 		</script>
